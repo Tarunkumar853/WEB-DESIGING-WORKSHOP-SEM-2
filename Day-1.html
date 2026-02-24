@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Selection UI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+            * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #8b0000;
+            color: white;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .brands {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .brands span {
+            padding: 10px 20px;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        .brands .active {
+            background: #ff0033;
+        }
+
+        .main {
+            display: flex;
+            gap: 20px;
+        }
+
+        .car-grid {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .car-card {
+            background: #a0001e;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .car-card.active {
+            border: 2px solid white;
+        }
+
+        .car-card:hover {
+            transform: scale(1.05);
+        }
+
+        .details {
+            flex: 1;
+            background: #9b001f;
+            padding: 20px;
+        }
+
+        .details h2 {
+            margin-bottom: 5px;
+        }
+
+        .stat {
+            margin: 10px 0;
+        }
+
+        .bar {
+            background: #333;
+            height: 8px;
+            margin-top: 5px;
+        }
+
+        .bar div {
+            background: #ff0033;
+            height: 100%;
+        }
+
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            background: #b3002d;
+            padding: 10px;
+        }
+
+        .price {
+            width: 100%;
+            padding: 10px;
+            background: #ff0033;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="brands">
+        <span>LAMBORGHINI</span>
+        <span class="active">LOTUS</span>
+        <span>MAZDA</span>
+        <span>MCLAREN</span>
+        <span>MERCEDES</span>
+    </div>
+
+    <div class="main">
+
+        <div class="car-grid">
+            <div class="car-card active">
+                <img src="https://autoartmodels.de/wp-content/uploads/2020/04/75392a-scaled.jpg" alt="Lotus 3-Eleven">
+                <h3>LOTUS 3-ELEVEN</h3>
+                <p>2016</p>
+            </div>
+
+            <div class="car-card">
+                <img src="https://s.tmimgcdn.com/scr/800x500/178100/lotus-elan-sprint-3d-model_178157-original.jpg" alt="LOTUS ELAN SPRINT">
+                <h3>LOTUS ELAN SPRINT</h3>
+                <p>1971</p>
+            </div>
+
+            <div class="car-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ7MwtTPYeUOLLi7eNe_yL9uBAx-SDafFgRQ&s" alt="">
+                <h3>LOTUS ELEVEN</h3>
+                <p>1956</p>
+            </div>
+
+            <div class="car-card">
+                <img src="car4.png" alt="">
+                <h3>LOTUS EXIGE S</h3>
+                <p>2012</p>
+            </div>
+        </div>
+
+        <div class="details">
+            <h2>LOTUS 3-ELEVEN</h2>
+            <p>2016</p>
+
+            <div class="stat">
+                <span>MAX SPEED</span>
+                <div class="bar"><div style="width:100%"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>ACCELERATION</span>
+                <div class="bar"><div style="width:85%"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>BRAKING</span>
+                <div class="bar"><div style="width:43%"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>CORNERING</span>
+                <div class="bar"><div style="width:50%"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>STABILITY</span>
+                <div class="bar"><div style="width:67%"></div></div>
+            </div>
+
+            <div class="info">
+                <div>410 HP</div>
+                <div>174 MPH</div>
+                <div>954 KG</div>
+            </div>
+
+            <button class="price">RP 12,690</button>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
