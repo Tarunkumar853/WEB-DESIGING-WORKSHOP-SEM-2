@@ -1,2 +1,2 @@
-# CSE-26 SEM-2
+# WEB-DESIGING-WORKSHOP-SEM-2
 Javascript and React
