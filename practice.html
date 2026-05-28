@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+</body>
+ <script language="javascript" type="text/javascript">
+    // document.write("Hello World!");
+    let car = ["bmw", "honda" , "Volvo"];
+    document.getElementById("demo1").innerHTML = car;
+    let bmw = car[0];
+    document.getElementById("demo2").innerHTML = bmw;
+    let len = car.length;
+    document.getElementById("demo3").innerHTML = len;
+
+    car.forEach((item,index,array) => {console.log(item,index);});
+
+    </script>
+</html>
