@@ -1,18 +1,59 @@
 import {
   FaHome,
-  FaBook,
   FaClipboardList,
   FaStickyNote,
   FaCog,
 } from "react-icons/fa";
 
-const Sidebar = () => {
+import { motion } from "framer-motion";
+import { FaChartBar } from "react-icons/fa";
+
+const Sidebar = ({ page, setPage }) => {
+
+  const menuItems = [
+    {
+      name: "dashboard",
+      label: "Dashboard",
+      icon: <FaHome />,
+    },
+    {
+      name: "attendance",
+      label: "Attendance",
+      icon: <FaChartBar />,
+    },
+    {
+      name: "cgpa",
+      label: "CGPA",
+      icon: "🎓",
+    },
+    {
+      name: "timetable",
+      label: "Timetable",
+      icon: "📅",
+    },
+    {
+      name: "assignments",
+      label: "Assignments",
+      icon: <FaClipboardList />,
+    },
+    {
+      name: "notes",
+      label: "Notes",
+      icon: <FaStickyNote />,
+    },
+    {
+      name: "settings",
+      label: "Settings",
+      icon: <FaCog />,
+    },
+  ];
+
   return (
     <div
       className="
       w-56
       min-h-screen
-      bg-slate-900
+      bg-slate-950
       text-white
       p-6
       fixed
@@ -25,42 +66,43 @@ const Sidebar = () => {
         StudyDash
       </h1>
 
-      <ul className="space-y-8 text-lg">
+      <ul className="space-y-6">
 
-        <li className="flex items-center gap-3 hover:text-cyan-400 transition duration-300 cursor-pointer">
+        {menuItems.map((item) => (
 
-          <FaHome />
-          Dashboard
+          <motion.li
+            whileHover={{
+                    scale: 1.05,
+                    x: 5,
+            }}
 
-        </li>
+            key={item.name}
+            onClick={() => setPage(item.name)}
+            className={`
+            flex
+            items-center
+            gap-3
+            p-3
+            rounded-xl
+            cursor-pointer
+            transition
+            duration-300
 
-        <li className="flex items-center gap-3 hover:text-cyan-400 transition duration-300 cursor-pointer">
+            ${
+              page === item.name
+                ? "bg-cyan-400 text-black"
+                : "hover:bg-slate-800"
+            }
+            `}
+          >
 
-          <FaBook />
-          Attendance
+            {item.icon}
 
-        </li>
+            {item.label}
 
-        <li className="flex items-center gap-3 hover:text-cyan-400 transition duration-300 cursor-pointer">
+          </motion.li>
 
-          <FaClipboardList />
-          Assignments
-
-        </li>
-
-        <li className="flex items-center gap-3 hover:text-cyan-400 transition duration-300 cursor-pointer">
-
-          <FaStickyNote />
-          Notes
-
-        </li>
-
-        <li className="flex items-center gap-3 hover:text-cyan-400 transition duration-300 cursor-pointer">
-
-          <FaCog />
-          Settings
-
-        </li>
+        ))}
 
       </ul>
 

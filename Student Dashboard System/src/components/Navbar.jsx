@@ -5,22 +5,21 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({
+  darkMode,
+  setDarkMode,
+}) => {
   return (
     <div
       className="
       flex
-      flex-row
+      flex-col
+      md:flex-row
       justify-between
       items-center
       gap-4
-      bg-slate-800
-      p-5
-      rounded-2xl
-      shadow-lg
-      border border-slate-700
-      "
-    >
+      py-2
+      ">
 
       <div>
         <h2 className="text-3xl font-bold text-white">
@@ -41,18 +40,14 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search..."
-            className="
-            bg-transparent
-            outline-none
-            text-white
-            placeholder-gray-400
-            "
-          />
+            className=" bg-transparent outline-none text-white placeholder-gray-400" />
 
         </div>
 
-        <FaMoon className="text-white text-xl cursor-pointer hover:text-cyan-400 transition duration-300" />
-
+        <button onClick={() => setDarkMode(!darkMode)}>
+          <FaMoon
+              className=" text-white text-xl cursor-pointer hover:text-cyan-400 transition duration-300 "/>
+        </button>
         <FaBell className="text-white text-xl cursor-pointer hover:text-cyan-400 transition duration-300" />
 
         <FaUserCircle className="text-white text-3xl cursor-pointer hover:text-cyan-400 transition duration-300" />
