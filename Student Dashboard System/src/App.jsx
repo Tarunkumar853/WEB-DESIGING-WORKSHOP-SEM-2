@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 
-import Dashboard from "./pages/Dashboard";
-import Assignments from "./pages/Assignments";
-import NotesPage from "./pages/NotesPage";
-import Settings from "./pages/Settings";
-import AttendancePage from "./pages/AttendancePage";
-import CgpaPage from "./pages/CgpaPage";
-import TimetablePage from "./pages/TimetablePage";
+import Dashboard from "./Pages/Dashboard";
+import Assignments from "./Pages/Assignments";
+import NotesPage from "./Pages/NotesPage";
+import Settings from "./Pages/Settings";
+import AttendancePage from "./Pages/AttendancePage";
+import CgpaPage from "./Pages/CgpaPage";
+import TimetablePage from "./Pages/TimetablePage";
 
 function App() {
 
